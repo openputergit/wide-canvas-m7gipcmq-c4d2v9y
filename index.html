@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Festival Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff69b4, #8a2be2, #ff1493);
+            color: white;
+        }
+        .hero-pattern {
+            background-image: url('data:image/svg+xml,<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15" fill="rgba(255,255,255,0.1)"/></svg>');
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FF0099, #00FF00, #FF9933, #FF3366);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 5s ease infinite;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .color-splash {
+            animation: colorSplash 3s infinite;
+        }
+        @keyframes colorSplash {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/10 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <img src="https://firebasestorage.googleapis.com/v0/b/widecanvas-d0dd4.appspot.com/o/logos%2F1000039059.png?alt=media&token=2a4acf00-95ab-4666-8e4f-40e684d98469" alt="Holi Festival Logo" class="h-12">
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-pink-300 transition">Home</a>
+                    <a href="#about" class="hover:text-pink-300 transition">About</a>
+                    <a href="#gallery" class="hover:text-pink-300 transition">Gallery</a>
+                    <a href="#contact" class="hover:text-pink-300 transition">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/95 z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="text-xl hover:text-pink-300 transition">Home</a>
+            <a href="#about" class="text-xl hover:text-pink-300 transition">About</a>
+            <a href="#gallery" class="text-xl hover:text-pink-300 transition">Gallery</a>
+            <a href="#contact" class="text-xl hover:text-pink-300 transition">Contact</a>
+            <button onclick="toggleMenu()" class="absolute top-4 right-4">
+                <i class="bi bi-x-lg text-3xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-screen flex items-center justify-center pt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Experience the Magic of Holi</h1>
+            <p class="text-xl md:text-2xl mb-8">Join us for the most colorful celebration of the year!</p>
+            <div class="flex justify-center gap-4">
+                <button class="bg-pink-500 hover:bg-pink-600 px-8 py-3 rounded-full transition">Book Tickets</button>
+                <button class="border-2 border-white hover:bg-white/20 px-8 py-3 rounded-full transition">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Image -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <img src="https://firebasestorage.googleapis.com/v0/b/widecanvas-d0dd4.appspot.com/o/additional-images%2F1000039059.png?alt=media&token=6149d87c-c437-4a7a-bfd7-499d080a28a7" 
+                 alt="Holi Celebration" 
+                 class="rounded-3xl shadow-2xl w-full h-[500px] object-cover color-splash">
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                    <i class="bi bi-palette-fill text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Organic Colors</h3>
+                    <p>Experience the joy with our eco-friendly, skin-safe colors.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                    <i class="bi bi-music-note-beamed text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Live Music</h3>
+                    <p>Dance to the beats of traditional and modern music.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                    <i class="bi bi-cup-hot-fill text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-4">Food Festival</h3>
+                    <p>Savor delicious traditional Holi delicacies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 focus:outline-none focus:border-pink-500">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 focus:outline-none focus:border-pink-500">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg bg-white/20 backdrop-blur-md border border-white/30 focus:outline-none focus:border-pink-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-pink-500 hover:bg-pink-600 py-3 rounded-lg transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <img src="https://firebasestorage.googleapis.com/v0/b/widecanvas-d0dd4.appspot.com/o/logos%2F1000039059.png?alt=media&token=2a4acf00-95ab-4666-8e4f-40e684d98469" alt="Holi Festival Logo" class="h-10 mb-4 md:mb-0">
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-pink-300"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="hover:text-pink-300"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="hover:text-pink-300"><i class="bi bi-twitter"></i></a>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <p>&copy; 2024 Holi Festival. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (window.innerWidth < 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Add scroll animation
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const nav = document.querySelector('nav');
+            
+            if (scrolled > 50) {
+                nav.classList.add('bg-black/30');
+                nav.classList.remove('bg-white/10');
+            } else {
+                nav.classList.remove('bg-black/30');
+                nav.classList.add('bg-white/10');
+            }
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
